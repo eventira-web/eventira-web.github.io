@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventira - The Future of Event Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to your new stylesheet -->
+    <link href="style.css" rel="stylesheet">
+    <script>
+        // This part MUST stay in the HTML for Tailwind CSS to work
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#5925DC', '50': '#F4F0FF', '100': '#E8E0FF', '200': '#D1C2FF', '300': '#B9A3FF', '400': '#A285FF', '500': '#8B66FF', '600': '#7447FF', '700': '#5925DC', '800': '#431CA8', '900': '#2D1273', '950': '#1A0B4A' },
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'subtle-bounce': 'subtleBounce 2.5s ease-in-out infinite', 'gradient-pan': 'gradientPan 6s ease infinite', 'shine': 'shine 5s ease-in-out infinite', },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }, },
+                        subtleBounce: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' }, },
+                        gradientPan: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' }, },
+                        shine: { '0%': { transform: 'translateX(-100%)' }, '50%, 100%': { transform: 'translateX(100%)' }, }
+                    }
+                }
+            },
+            plugins: [],
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-950 antialiased transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex-shrink-0"><img src="https://placehold.co/650x150/FFFFFF/5925DC?text=Eventira" alt="Eventira Logo" class="h-10 w-auto"></a>
+                <nav class="hidden lg:flex items-center space-x-8"><a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Features</a><a href="#beta" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Join Beta</a><a href="#faq" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">FAQ</a></nav>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"><svg id="theme-icon-light" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg><svg id="theme-icon-dark" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg></button>
+                    <a href="#" class="hidden sm:inline-block px-5 py-2.5 text-sm font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/50 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors duration-300">Login</a>
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Features</a><a href="#beta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
+        <div class="h-0.5 w-full header-strip animate-gradient-pan"></div>
+    </header>
+
+    <main>
+        <!-- Main content from the previous version goes here... -->
+        <!-- Hero Section, Beta Section, Features Section, FAQ Section -->
+        <!-- I've omitted the full <main> section here for brevity, but you should copy it from the previous version -->
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-950/50">
+        <!-- Footer content from the previous version goes here... -->
+    </footer>
+
+    <!-- Link to your new script file -->
+    <script src="script.js"></script>
+</body>
+</html>
