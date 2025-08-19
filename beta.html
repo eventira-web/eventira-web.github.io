@@ -19,10 +19,12 @@
                     colors: {
                         primary: { DEFAULT: '#5925DC', '50': '#F4F0FF', '100': '#E8E0FF', '200': '#D1C2FF', '300': '#B9A3FF', '400': '#A285FF', '500': '#8B66FF', '600': '#7447FF', '700': '#5925DC', '800': '#431CA8', '900': '#2D1273', '950': '#1A0B4A' },
                     },
-                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'subtle-bounce': 'subtleBounce 2.5s ease-in-out infinite' },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'subtle-bounce': 'subtleBounce 2.5s ease-in-out infinite', 'gradient-pan': 'gradientPan 6s ease infinite', 'shine': 'shine 5s ease-in-out infinite', },
                     keyframes: {
                         fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }, },
                         subtleBounce: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' }, },
+                        gradientPan: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' }, },
+                        shine: { '0%': { transform: 'translateX(-100%)' }, '50%, 100%': { transform: 'translateX(100%)' }, }
                     }
                 }
             },
@@ -61,7 +63,7 @@
 <body class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 antialiased transition-colors duration-300">
 
     <!-- Header / Navigation -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300 shadow-sm">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex-shrink-0"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a>
@@ -78,6 +80,7 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Features</a><a href="index.html#beta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="index.html#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
+        <div class="h-0.5 w-full header-strip animate-gradient-pan"></div>
     </header>
 
     <main>
@@ -119,9 +122,6 @@
                                     <div class="flex items-center"><input id="event-virtual" name="eventTypes" type="checkbox" value="Virtual Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-virtual" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Virtual Events</label></div>
                                     <div class="flex items-center"><input id="event-hybrid" name="eventTypes" type="checkbox" value="Hybrid Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-hybrid" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Hybrid Events</label></div>
                                     <div class="flex items-center"><input id="event-other" name="eventTypes" type="checkbox" value="Other" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-other" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Other</label></div>
-                                </div>
-                                <div id="other-event-type-container" class="hidden mt-2">
-                                     <input type="text" name="otherEventType" id="otherEventType" placeholder="Please specify" class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm">
                                 </div>
                             </fieldset>
                             
@@ -267,10 +267,6 @@
             // Handle event type checkboxes
             const eventTypes = [];
             form.querySelectorAll('input[name="eventTypes"]:checked').forEach(checkbox => { eventTypes.push(checkbox.value); });
-            if (document.getElementById('event-other').checked) {
-                const otherEventType = document.getElementById('otherEventType').value;
-                if(otherEventType) { eventTypes.push(`Other: ${otherEventType}`); }
-            }
             formData.append('eventTypesCombined', eventTypes.join(', '));
             
             // Handle pain point checkboxes
@@ -317,15 +313,6 @@
             });
         });
         
-        // Conditional logic for "Other Event Type" section
-        document.getElementById('event-other').addEventListener('change', function() {
-            if (this.checked) {
-                document.getElementById('other-event-type-container').classList.remove('hidden');
-            } else {
-                document.getElementById('other-event-type-container').classList.add('hidden');
-            }
-        });
-
         // Conditional logic for "Other Pain Point" section
         document.getElementById('pain-other').addEventListener('change', function() {
             if (this.checked) {
