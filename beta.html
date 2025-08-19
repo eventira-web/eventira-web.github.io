@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventira Beta Program - Eventira</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add the official Tailwind Forms plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=forms"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,35 +30,8 @@
                     }
                 }
             },
-            // Add the forms plugin to style checkboxes and radios
-            plugins: [
-                function({ addBase, theme }) {
-                    addBase({
-                        'input[type="checkbox"]:checked': {
-                            backgroundColor: theme('colors.primary.DEFAULT'),
-                            borderColor: theme('colors.primary.DEFAULT'),
-                        },
-                        'input[type="radio"]:checked': {
-                            backgroundColor: theme('colors.primary.DEFAULT'),
-                            borderColor: theme('colors.primary.DEFAULT'),
-                        },
-                         'input[type="checkbox"]:checked:hover': {
-                            backgroundColor: theme('colors.primary.600'),
-                            borderColor: theme('colors.primary.600'),
-                        },
-                        'input[type="radio"]:checked:hover': {
-                            backgroundColor: theme('colors.primary.600'),
-                            borderColor: theme('colors.primary.600'),
-                        },
-                         'input[type="checkbox"]:focus': {
-                            '--tw-ring-color': theme('colors.primary.DEFAULT'),
-                         },
-                         'input[type="radio"]:focus': {
-                             '--tw-ring-color': theme('colors.primary.DEFAULT'),
-                         }
-                    });
-                }
-            ],
+            // The custom plugin is no longer needed
+            plugins: [],
         }
     </script>
 </head>
@@ -122,6 +97,9 @@
                                     <div class="flex items-center"><input id="event-virtual" name="eventTypes" type="checkbox" value="Virtual Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-virtual" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Virtual Events</label></div>
                                     <div class="flex items-center"><input id="event-hybrid" name="eventTypes" type="checkbox" value="Hybrid Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-hybrid" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Hybrid Events</label></div>
                                     <div class="flex items-center"><input id="event-other" name="eventTypes" type="checkbox" value="Other" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-other" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Other</label></div>
+                                </div>
+                                <div id="other-event-type-container" class="hidden mt-2">
+                                     <input type="text" name="otherEventType" id="otherEventType" placeholder="Please specify" class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm">
                                 </div>
                             </fieldset>
                             
@@ -267,6 +245,10 @@
             // Handle event type checkboxes
             const eventTypes = [];
             form.querySelectorAll('input[name="eventTypes"]:checked').forEach(checkbox => { eventTypes.push(checkbox.value); });
+            if (document.getElementById('event-other').checked) {
+                const otherEventType = document.getElementById('otherEventType').value;
+                if(otherEventType) { eventTypes.push(`Other: ${otherEventType}`); }
+            }
             formData.append('eventTypesCombined', eventTypes.join(', '));
             
             // Handle pain point checkboxes
@@ -313,6 +295,15 @@
             });
         });
         
+        // Conditional logic for "Other Event Type" section
+        document.getElementById('event-other').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('other-event-type-container').classList.remove('hidden');
+            } else {
+                document.getElementById('other-event-type-container').classList.add('hidden');
+            }
+        });
+
         // Conditional logic for "Other Pain Point" section
         document.getElementById('pain-other').addEventListener('change', function() {
             if (this.checked) {
