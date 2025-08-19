@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventira Beta Program - Eventira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to your stylesheet -->
+    <link href="style.css" rel="stylesheet">
+    <script>
+        // This part MUST stay in the HTML for Tailwind CSS to work
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#5925DC', '50': '#F4F0FF', '100': '#E8E0FF', '200': '#D1C2FF', '300': '#B9A3FF', '400': '#A285FF', '500': '#8B66FF', '600': '#7447FF', '700': '#5925DC', '800': '#431CA8', '900': '#2D1273', '950': '#1A0B4A' },
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'subtle-bounce': 'subtleBounce 2.5s ease-in-out infinite' },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }, },
+                        subtleBounce: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' }, },
+                    }
+                }
+            },
+            // Add the forms plugin to style checkboxes and radios
+            plugins: [
+                function({ addBase, theme }) {
+                    addBase({
+                        'input[type="checkbox"]:checked': {
+                            backgroundColor: theme('colors.primary.DEFAULT'),
+                            borderColor: theme('colors.primary.DEFAULT'),
+                        },
+                        'input[type="radio"]:checked': {
+                            backgroundColor: theme('colors.primary.DEFAULT'),
+                            borderColor: theme('colors.primary.DEFAULT'),
+                        },
+                         'input[type="checkbox"]:checked:hover': {
+                            backgroundColor: theme('colors.primary.600'),
+                            borderColor: theme('colors.primary.600'),
+                        },
+                        'input[type="radio"]:checked:hover': {
+                            backgroundColor: theme('colors.primary.600'),
+                            borderColor: theme('colors.primary.600'),
+                        },
+                         'input[type="checkbox"]:focus': {
+                            '--tw-ring-color': theme('colors.primary.DEFAULT'),
+                         },
+                         'input[type="radio"]:focus': {
+                             '--tw-ring-color': theme('colors.primary.DEFAULT'),
+                         }
+                    });
+                }
+            ],
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 antialiased transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex-shrink-0"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Features</a>
+                    <a href="index.html#beta" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Join Beta</a>
+                    <a href="index.html#faq" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">FAQ</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"><svg id="theme-icon-light" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg><svg id="theme-icon-dark" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg></button>
+                    <a href="#" class="hidden sm:inline-block px-5 py-2.5 text-sm font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/50 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors duration-300">Login</a>
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Features</a><a href="index.html#beta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="index.html#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
+    </header>
+
+    <main>
+        <div class="pt-32 pb-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">Join the Eventira Beta Program</h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Help us shape the future of event management and get exclusive early access.</p>
+                    </div>
+
+                    <div id="form-container" class="bg-gray-50 dark:bg-gray-900/50 p-8 rounded-2xl shadow-lg">
+                        <form id="beta-form" class="space-y-8">
+                            <!-- Personal Info -->
+                            <fieldset class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div><label for="firstName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">First Name</label><input type="text" name="firstName" id="firstName" required class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm"></div>
+                                    <div><label for="lastName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Last Name</label><input type="text" name="lastName" id="lastName" required class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm"></div>
+                                </div>
+                                <div><label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Email Address</label><input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm"></div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div><label for="companyName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Company Name</label><input type="text" name="companyName" id="companyName" class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm"></div>
+                                    <div><label for="jobTitle" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Job Title</label><input type="text" name="jobTitle" id="jobTitle" class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm"></div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Event Types -->
+                            <fieldset>
+                                <legend class="block text-sm font-semibold text-gray-700 dark:text-gray-300">What types of events do you organize?</legend>
+                                <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                    <div class="flex items-center"><input id="event-conferences" name="eventTypes" type="checkbox" value="Conferences" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-conferences" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Conferences</label></div>
+                                    <div class="flex items-center"><input id="event-symposia" name="eventTypes" type="checkbox" value="Scientific Symposia" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-symposia" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Scientific Symposia</label></div>
+                                    <div class="flex items-center"><input id="event-trade-shows" name="eventTypes" type="checkbox" value="Trade Shows" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-trade-shows" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Trade Shows</label></div>
+                                    <div class="flex items-center"><input id="event-exhibitions" name="eventTypes" type="checkbox" value="Exhibitions" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-exhibitions" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Exhibitions</label></div>
+                                    <div class="flex items-center"><input id="event-incentive" name="eventTypes" type="checkbox" value="Incentive Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-incentive" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Incentive Events</label></div>
+                                    <div class="flex items-center"><input id="event-internal-meetings" name="eventTypes" type="checkbox" value="Internal Meetings" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-internal-meetings" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Internal Meetings</label></div>
+                                    <div class="flex items-center"><input id="event-product-launches" name="eventTypes" type="checkbox" value="Product Launches" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-product-launches" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Product Launches</label></div>
+                                    <div class="flex items-center"><input id="event-workshops" name="eventTypes" type="checkbox" value="Workshops/Trainings" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-workshops" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Workshops/Trainings</label></div>
+                                    <div class="flex items-center"><input id="event-virtual" name="eventTypes" type="checkbox" value="Virtual Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-virtual" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Virtual Events</label></div>
+                                    <div class="flex items-center"><input id="event-hybrid" name="eventTypes" type="checkbox" value="Hybrid Events" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-hybrid" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Hybrid Events</label></div>
+                                    <div class="flex items-center"><input id="event-other" name="eventTypes" type="checkbox" value="Other" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="event-other" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Other</label></div>
+                                </div>
+                                <div id="other-event-type-container" class="hidden mt-2">
+                                     <input type="text" name="otherEventType" id="otherEventType" placeholder="Please specify" class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm">
+                                </div>
+                            </fieldset>
+                            
+                             <!-- Current Tools and Apps -->
+                            <fieldset class="space-y-4">
+                                <legend class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Do you currently use an app or platform for event management?</legend>
+                                <div class="flex items-center space-x-6">
+                                    <div class="flex items-center"><input id="uses-app-yes" name="usesCurrentApp" type="radio" value="Yes" class="h-4 w-4 border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="uses-app-yes" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Yes</label></div>
+                                    <div class="flex items-center"><input id="uses-app-no" name="usesCurrentApp" type="radio" value="No" checked class="h-4 w-4 border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="uses-app-no" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">No</label></div>
+                                </div>
+                                <div id="current-apps-container" class="hidden">
+                                    <label for="currentApps" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">What app(s) or platform(s) do you currently use? (e.g., Eventbrite, Cvent, Trello)</label>
+                                    <input type="text" name="currentApps" id="currentApps" class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm">
+                                </div>
+                            </fieldset>
+
+                            <!-- Pain Points -->
+                            <fieldset>
+                                 <legend class="block text-sm font-semibold text-gray-700 dark:text-gray-300">What are your biggest pain points or challenges with your current tools? (Check all that apply)</legend>
+                                 <div class="mt-4 space-y-2">
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-costs" name="painPoints" type="checkbox" value="Too expensive" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-costs" class="text-gray-700 dark:text-gray-300">Too expensive / Hidden costs.</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-sponsorship" name="painPoints" type="checkbox" value="Not enough sponsorship/exposition tools" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-sponsorship" class="text-gray-700 dark:text-gray-300">Not enough sponsorship/exposition tools.</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-customization" name="painPoints" type="checkbox" value="Limited customization" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-customization" class="text-gray-700 dark:text-gray-300">Limited customization or development possible.</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-stability" name="painPoints" type="checkbox" value="Poor stability" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-stability" class="text-gray-700 dark:text-gray-300">Poor technical stability (glitches, compatibility issues).</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-adoption" name="painPoints" type="checkbox" value="Low attendee adoption" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-adoption" class="text-gray-700 dark:text-gray-300">Low attendee adoption due to complicated onboarding.</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-integration" name="painPoints" type="checkbox" value="Difficulty integrating" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-integration" class="text-gray-700 dark:text-gray-300">Difficulty integrating with other event technologies.</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-support" name="painPoints" type="checkbox" value="Slow support" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-support" class="text-gray-700 dark:text-gray-300">Slow or unresponsive customer support.</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="pain-other" name="painPoints" type="checkbox" value="Other" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="pain-other" class="text-gray-700 dark:text-gray-300">Other (please specify):</label></div></div>
+                                 </div>
+                                 <div id="other-pain-point-container" class="hidden mt-2">
+                                     <input type="text" name="otherPainPoint" id="otherPainPoint" placeholder="Please specify your other pain points" class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm">
+                                </div>
+                            </fieldset>
+                            
+                            <!-- Features Needed -->
+                            <fieldset>
+                                <legend class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Which of the following features are important for your event management needs? (Check all that apply)</legend>
+                                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-registration" name="neededFeatures" type="checkbox" value="Registration/Ticketing" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-registration" class="text-gray-700 dark:text-gray-300">Attendee registration and ticketing</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-virtual" name="neededFeatures" type="checkbox" value="Virtual/Hybrid Support" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-virtual" class="text-gray-700 dark:text-gray-300">Virtual/hybrid event support</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-agenda" name="neededFeatures" type="checkbox" value="Agenda Management" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-agenda" class="text-gray-700 dark:text-gray-300">Agenda and schedule management</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-speaker" name="neededFeatures" type="checkbox" value="Speaker Management" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-speaker" class="text-gray-700 dark:text-gray-300">Speaker management</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-sponsor" name="neededFeatures" type="checkbox" value="Sponsor/Exhibitor Management" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-sponsor" class="text-gray-700 dark:text-gray-300">Sponsor/exhibitor management</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-website" name="neededFeatures" type="checkbox" value="Event Website Creation" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-website" class="text-gray-700 dark:text-gray-300">Event website creation and customization</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-mobile" name="neededFeatures" type="checkbox" value="Mobile App" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-mobile" class="text-gray-700 dark:text-gray-300">Mobile app for attendees</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-email" name="neededFeatures" type="checkbox" value="Email Marketing" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-email" class="text-gray-700 dark:text-gray-300">Email marketing and communication</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-budget" name="neededFeatures" type="checkbox" value="Budget Tracking" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-budget" class="text-gray-700 dark:text-gray-300">Budget tracking and financial reporting</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-venue" name="neededFeatures" type="checkbox" value="Venue Management" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-venue" class="text-gray-700 dark:text-gray-300">Venue management (floor plans, seating)</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-engagement" name="neededFeatures" type="checkbox" value="Attendee Engagement" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-engagement" class="text-gray-700 dark:text-gray-300">Attendee engagement tools (polls, Q&A)</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-networking" name="neededFeatures" type="checkbox" value="Networking" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-networking" class="text-gray-700 dark:text-gray-300">Networking features (matchmaking, chat)</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-analytics" name="neededFeatures" type="checkbox" value="Analytics" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-analytics" class="text-gray-700 dark:text-gray-300">Analytics and reporting</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-crm" name="neededFeatures" type="checkbox" value="CRM Integration" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-crm" class="text-gray-700 dark:text-gray-300">Integration with CRM tools</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-branding" name="neededFeatures" type="checkbox" value="Custom Branding" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-branding" class="text-gray-700 dark:text-gray-300">Custom branding for event materials</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-checkin" name="neededFeatures" type="checkbox" value="On-site Check-in" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-checkin" class="text-gray-700 dark:text-gray-300">On-site check-in and badge printing</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-feedback" name="neededFeatures" type="checkbox" value="Survey/Feedback" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-feedback" class="text-gray-700 dark:text-gray-300">Survey and feedback collection</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-language" name="neededFeatures" type="checkbox" value="Multi-language Support" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-language" class="text-gray-700 dark:text-gray-300">Multi-language support</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-security" name="neededFeatures" type="checkbox" value="Security/GDPR" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-security" class="text-gray-700 dark:text-gray-300">Security features (GDPR compliance)</label></div></div>
+                                    <div class="relative flex items-start"><div class="flex h-5 items-center"><input id="feature-other" name="neededFeatures" type="checkbox" value="Other" class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"></div><div class="ml-3 text-sm"><label for="feature-other" class="text-gray-700 dark:text-gray-300">Other (please specify):</label></div></div>
+                                </div>
+                                <div id="other-feature-container" class="hidden mt-2">
+                                     <input type="text" name="otherFeature" id="otherFeature" placeholder="Please specify other features you need" class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm">
+                                </div>
+                            </fieldset>
+
+                            <!-- Budget -->
+                            <fieldset>
+                                <legend class="block text-sm font-semibold text-gray-700 dark:text-gray-300">How much are you willing to spend on event management services or tools per event?</legend>
+                                <div class="mt-4 grid grid-cols-2 gap-4">
+                                    <div class="flex items-center"><input id="budget-0" name="budget" type="radio" value="$0" class="h-4 w-4 border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="budget-0" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">$0</label></div>
+                                    <div class="flex items-center"><input id="budget-1000" name="budget" type="radio" value="$1 - $1,000" class="h-4 w-4 border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="budget-1000" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">$1 - $1,000</label></div>
+                                    <div class="flex items-center"><input id="budget-5000" name="budget" type="radio" value="$1,001 - $5,000" class="h-4 w-4 border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="budget-5000" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">$1,001 - $5,000</label></div>
+                                    <div class="flex items-center"><input id="budget-10000" name="budget" type="radio" value="$5,001 - $10,000" class="h-4 w-4 border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800"><label for="budget-10000" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">$5,001 - $10,000</label></div>
+                                </div>
+                            </fieldset>
+
+                             <!-- Event Details -->
+                            <div>
+                                <label for="eventDetails" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Tell us more about your upcoming events</label>
+                                <textarea id="eventDetails" name="eventDetails" rows="4" class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 sm:text-sm"></textarea>
+                            </div>
+
+                            <!-- Consent -->
+                            <div>
+                                <div class="flex items-start">
+                                    <div class="flex h-5 items-center">
+                                        <input id="consent" name="consent" type="checkbox" required class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-gray-800">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="consent" class="font-semibold text-gray-700 dark:text-gray-300">I would like to join the Eventira beta program and claim my complimentary licenses.</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="submit" id="submit-button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="success-message" class="hidden text-center bg-green-50 dark:bg-green-900/50 p-8 rounded-2xl shadow-lg">
+                        <h2 class="text-2xl font-bold text-green-800 dark:text-green-300">Thank You!</h2>
+                        <p class="mt-2 text-lg text-green-700 dark:text-green-400">Thank you for joining our beta. We will shortly contact you with a confirmation about the complimentary licenses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-950/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-4"><a href="#" class="flex items-center space-x-2"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a><p class="mt-4 text-gray-600 dark:text-gray-400">The all-in-one platform to make your events unforgettable.</p><div class="mt-6 flex space-x-4"><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">LinkedIn</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">Facebook</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg></a></div></div>
+                <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Product</h3><ul class="mt-4 space-y-4"><li><a href="index.html#features" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Features</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Pricing</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Integrations</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Company</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">About</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Careers</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Contact</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Resources</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Articles</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Help Center</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">API Docs</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Legal</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Terms</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Privacy</a></li></ul></div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8 text-center"><p class="text-base text-gray-500 dark:text-gray-400">&copy; 2025 Eventira, Inc. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission script
+        const form = document.getElementById('beta-form');
+        const formContainer = document.getElementById('form-container');
+        const successMessage = document.getElementById('success-message');
+        const submitButton = document.getElementById('submit-button');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz_eCwg_n7plKKWaJZH-gTv_rQeT1pVmV9wb8KTkEyBsKy3uUXZwMCQ2nDG8OMJfr7a/exec';
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+
+            const formData = new FormData(form);
+            
+            // Handle event type checkboxes
+            const eventTypes = [];
+            form.querySelectorAll('input[name="eventTypes"]:checked').forEach(checkbox => { eventTypes.push(checkbox.value); });
+            if (document.getElementById('event-other').checked) {
+                const otherEventType = document.getElementById('otherEventType').value;
+                if(otherEventType) { eventTypes.push(`Other: ${otherEventType}`); }
+            }
+            formData.append('eventTypesCombined', eventTypes.join(', '));
+            
+            // Handle pain point checkboxes
+            const painPoints = [];
+            form.querySelectorAll('input[name="painPoints"]:checked').forEach(checkbox => { painPoints.push(checkbox.value); });
+            if (document.getElementById('pain-other').checked) {
+                const otherPainPoint = document.getElementById('otherPainPoint').value;
+                if(otherPainPoint) { painPoints.push(`Other: ${otherPainPoint}`); }
+            }
+            formData.append('painPointsCombined', painPoints.join('; '));
+
+            // Handle needed features checkboxes
+            const neededFeatures = [];
+            form.querySelectorAll('input[name="neededFeatures"]:checked').forEach(checkbox => { neededFeatures.push(checkbox.value); });
+            if (document.getElementById('feature-other').checked) {
+                const otherFeature = document.getElementById('otherFeature').value;
+                if(otherFeature) { neededFeatures.push(`Other: ${otherFeature}`); }
+            }
+            formData.append('neededFeaturesCombined', neededFeatures.join('; '));
+
+
+            fetch(scriptURL, { method: 'POST', body: formData})
+                .then(response => {
+                    console.log('Success!', response);
+                    formContainer.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit';
+                    alert('Error submitting form. Please try again.');
+                });
+        });
+
+        // Conditional logic for "Current Tools" section
+        document.querySelectorAll('input[name="usesCurrentApp"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'Yes') {
+                    document.getElementById('current-apps-container').classList.remove('hidden');
+                } else {
+                    document.getElementById('current-apps-container').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Conditional logic for "Other Event Type" section
+        document.getElementById('event-other').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('other-event-type-container').classList.remove('hidden');
+            } else {
+                document.getElementById('other-event-type-container').classList.add('hidden');
+            }
+        });
+
+        // Conditional logic for "Other Pain Point" section
+        document.getElementById('pain-other').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('other-pain-point-container').classList.remove('hidden');
+            } else {
+                document.getElementById('other-pain-point-container').classList.add('hidden');
+            }
+        });
+        
+        // Conditional logic for "Other Feature" section
+        document.getElementById('feature-other').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('other-feature-container').classList.remove('hidden');
+            } else {
+                document.getElementById('other-feature-container').classList.add('hidden');
+            }
+        });
+
+    </script>
+</body>
+</html>
