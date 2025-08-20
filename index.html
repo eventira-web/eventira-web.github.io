@@ -51,7 +51,7 @@
                             <span>Features</span>
                             <svg class="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                         </button>
-                        <div id="features-dropdown-menu" class="absolute mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                        <div id="features-dropdown-menu" class="absolute mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden dropdown-solid-bg">
                             <div class="py-1">
                                 <a href="#features-management" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Event Management & Operations</a>
                                 <a href="#features-engagement" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Attendee Experience & Engagement</a>
@@ -141,3 +141,70 @@
     <script src="script.js"></script>
 </body>
 </html>
+```
+
+### 2. `style.css` (Updated)
+
+This file includes the styles for the header strip and the new dropdown menu.
+
+
+```css
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7; /* Improved readability */
+    color: #374151; /* Dark gray text for light mode */
+}
+.dark body {
+    color: #d1d5db; /* Lighter gray for dark mode */
+}
+.hero-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.dark .hero-bg {
+     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-1.jpg');
+}
+.gradient-bg {
+    background: linear-gradient(120deg, #F9F6FF 0%, #F0EBFF 100%);
+}
+.dark .gradient-bg {
+    background: linear-gradient(120deg, #1A0B4A 0%, #220f5e 100%);
+}
+.animated-element {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animated-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.feature-card {
+    transition-delay: var(--delay, 0s);
+}
+.header-strip {
+    position: relative;
+    background: linear-gradient(90deg, #5925DC, #8B66FF, #5925DC);
+    background-size: 200% 200%;
+    overflow: hidden;
+}
+.header-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 5s ease-in-out infinite;
+}
+#features-dropdown-menu {
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+.dropdown-solid-bg {
+    background-color: white;
+}
+.dark .dropdown-solid-bg {
+    background-color: #1f2937; /* Tailwind gray-800 */
+}
