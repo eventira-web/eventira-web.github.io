@@ -51,14 +51,9 @@ body {
 #features-dropdown-menu {
     transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
-
-/* --- Dark Mode Improvements --- */
-.dark .feature-card,
-.dark #faq .animated-element {
-    background-color: #111827; /* Tailwind gray-900 */
-    border: 1px solid #374151; /* Tailwind gray-700 */
+.dropdown-solid-bg {
+    background-color: white;
 }
-
-.dark .feature-card p {
-    color: #D1D5DB; /* Brighter text for better contrast in dark mode */
+.dark .dropdown-solid-bg {
+    background-color: #1f2937; /* Tailwind gray-800 */
 }
