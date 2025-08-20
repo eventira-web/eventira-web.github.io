@@ -43,8 +43,20 @@
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex-shrink-0"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a>
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Features</a>
-                    <a href="index.html#beta" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Join Beta</a>
+                    <!-- Features Dropdown -->
+                    <div class="relative" id="features-dropdown-container">
+                        <button id="features-dropdown-button" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">
+                            <span>Features</span>
+                            <svg class="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1  0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <div id="features-dropdown-menu" class="absolute mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                            <div class="py-1">
+                                <a href="index.html#features-management" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Event Management & Operations</a>
+                                <a href="index.html#features-engagement" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Attendee Experience & Engagement</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="beta.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Join Beta</a>
                     <a href="index.html#faq" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">FAQ</a>
                 </nav>
                 <div class="flex items-center space-x-4">
@@ -54,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Features</a><a href="index.html#beta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="index.html#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
+        <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html#features-management" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Management Features</a><a href="index.html#features-engagement" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Attendee Features</a><a href="beta.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="index.html#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
         <div class="h-0.5 w-full header-strip animate-gradient-pan"></div>
     </header>
 
@@ -235,7 +247,7 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz_eCwg_n7plKKWaJZH-gTv_rQeT1pVmV9wb8KTkEyBsKy3uUXZwMCQ2nDG8OMJfr7a/exec';
+            const scriptURL = 'YOUR_GOOGLE_APP_SCRIPT_URL';
 
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting...';
