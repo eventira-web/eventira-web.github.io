@@ -50,10 +50,13 @@ body {
 }
 #features-dropdown-menu {
     transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    z-index: 10; /* Ensure dropdown is on top */
 }
 .dropdown-solid-bg {
     background-color: white;
+    z-index: 10; /* Ensure dropdown is on top */
 }
 .dark .dropdown-solid-bg {
     background-color: #1f2937; /* Tailwind gray-800 */
 }
+
