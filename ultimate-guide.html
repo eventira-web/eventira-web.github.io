@@ -77,407 +77,59 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <article class="max-w-4xl mx-auto">
                     <div class="text-center mb-12">
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary dark:text-primary-300 tracking-tight">The Ultimate Guide to Choosing the Perfect Event Platform for Your Hybrid Events on a Budget</h1>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">The Ultimate Guide to Choosing the Perfect Event Platform for Your Hybrid Events on a Budget</h1>
                         <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A streamlined guide with 17 key considerations to help you select a platform that impresses without breaking the bank. Make sure you get a copy of your checklist at the end.</p>
                     </div>
                     
                     <div class="space-y-12">
                         <p class="text-lg leading-relaxed">Planning a hybrid event on a tight budget is like cooking a gourmet meal with pantry staples—you need creativity, strategy, and the right tools. As an event manager, selecting a cost-effective platform that caters to both in-person and virtual attendees is crucial. This streamlined guide provides 17 key considerations to help you select a platform that impresses without breaking the bank. Each point is backed by third-party research, budget-friendly tips, and an actionable checklist. Let’s make your next event a hit!</p>
 
-                        <!-- Article Point 1 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Seamless+Experience" alt="Illustration for Seamless User Experience" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Opt for platforms with free PWAs or mobile-optimized browsers to avoid costly app development.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">1. Prioritize a Seamless User Experience</h3>
-                                <p class="mb-5">A great platform feels intuitive for all attendees, whether in the venue or online.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Forrester Research study found that 66% of users abandon platforms with poor usability. <a href="https://www.forrester.com/press-newsroom/forrester-2024-us-customer-experience-index/" class="text-primary hover:underline" target="_blank"> (Read)</a></p>
-                                </div>
-                                <p class="mb-5">Look for a clean interface that works across devices. A progressive web app (PWA) is ideal—it offers app-like functionality without a download, works offline, and ensures fast, reliable mobile access.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test registration and streaming on mobile and desktop.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure a PWA or responsive browser version is in the base plan.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify navigation is intuitive with clear menus.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check for free guided tutorials or tooltips.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Tailor content for in-person and online attendees.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure options to engage attendees via push notifications.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <!-- All 17 Article Points -->
+                        <script>
+                            const articlePoints = [
+                                { side: 'left', image: 'Seamless+Experience', budgetTip: 'Opt for platforms with free PWAs or mobile-optimized browsers to avoid costly app development.', title: '1. Prioritize a Seamless User Experience', description: 'A great platform feels intuitive for all attendees, whether in the venue or online.', fact: 'A 2024 Forrester Research study found that 66% of users abandon platforms with poor usability.', link: 'https://www.forrester.com/press-newsroom/forrester-2024-us-customer-experience-index/', mainText: 'Look for a clean interface that works across devices. A progressive web app (PWA) is ideal—it offers app-like functionality without a download, works offline, and ensures fast, reliable mobile access.', checklist: ['Test registration and streaming on mobile and desktop.', 'Ensure a PWA or responsive browser version is in the base plan.', 'Verify navigation is intuitive with clear menus.', 'Check for free guided tutorials or tooltips.', 'Tailor content for in-person and online attendees.', 'Ensure options to engage your attendees via push notifications.'] },
+                                { side: 'right', image: 'High-Quality+Streaming', budgetTip: 'Look for pay-per-use streaming or free tiers for smaller audiences.', title: '2. Ensure High-Quality Streaming', description: 'Streaming issues can tank your event.', fact: 'A 2023 Akamai report found that 60% of viewers abandon streams if buffering exceeds 8 seconds.', link: '#', mainText: 'Choose platforms with high-definition video and adaptive bitrate streaming.', checklist: ['Confirm HD video (1080p or higher) in the base plan.', 'Test streaming on low-bandwidth connections.', 'Ask about the load capacity for your audience size.', 'Request uptime stats (aim for 99.9%+).'] },
+                                { side: 'left', image: 'Tech+Integration', budgetTip: 'Use platforms that work with free or low-cost tools like barcode scanners instead of proprietary hardware.', title: '3. Integrate with In-Person Tech', description: 'Your platform must sync with on-site tools like projectors or RFID check-ins.', fact: 'A 2024 Gartner study notes that 70% of organizers struggle with tech integration.', link: '#', mainText: '', checklist: ['List your on-site tech (e.g., badge scanners, projectors).', 'Verify compatibility with affordable AV equipment.', 'Test real-time syncing of attendee data.', 'Confirm free API support for integrations.'] },
+                                { side: 'right', image: 'Existing+Tools', budgetTip: 'Use platforms that work with free tools like Google Sheets or PayPal.', title: '4. Integrate with Existing Tools', description: 'Sync with your workflow.', fact: 'A 2024 Forrester study notes that 68% of organizers face integration issues.', link: '#', mainText: 'Check compatibility with free CRMs or payment systems.', checklist: ['List your tools (CRM, email, payment).', 'Verify free API support for integrations.', 'Test data syncing with free tools.', 'Confirm compatibility with low-cost badge printers.'] },
+                                { side: 'left', image: 'Attendee+Interaction', budgetTip: 'Prioritize free tools like chat or basic polls over premium features like gamification or advanced matchmaking.', title: '5. Enhance Attendee Interaction and Community', description: 'Engagement, networking, and community make events memorable.', fact: 'A 2025 Harvard Business Review article found that 78% of attendees value interactive tools, while a 2024 McKinsey report notes that 72% prioritize networking and 65% value community features.', link: '#', mainText: 'Look for platforms with polls, Q&A, chat, AI matchmaking, virtual lobbies, and discussion boards.', checklist: ['Enable free polls, Q&A, and chat for sessions.', 'Set up virtual lobbies or discussion boards for mingling.', 'Use basic AI matchmaking or attendee profiles if included.', 'Promote pre-event networking via free tools.'] },
+                                { side: 'right', image: 'Robust+Analytics', budgetTip: 'Choose platforms with basic analytics in the base plan.', title: '6. Demand Robust Analytics', description: 'Data proves your event’s success.', fact: 'A 2024 Deloitte study found that 63% of managers use analytics for ROI.', link: '#', mainText: 'Look for free real-time dashboards tracking attendance and engagement.', checklist: ['Confirm free real-time analytics for attendance.', 'Check for exportable reports in CSV/PDF.', 'Test dashboard usability during setup.', 'Ensure metrics cover both audiences.'] },
+                                { side: 'left', image: 'Security+%26+Privacy', budgetTip: 'Opt for platforms with built-in security to avoid compliance costs.', title: '7. Prioritize Security and Privacy', description: 'Data breaches destroy trust.', fact: 'A 2024 Ponemon Institute report states that 58% of platforms faced cyber threats.', link: '#', mainText: 'Ensure GDPR/CCPA compliance and basic encryption.', checklist: ['Verify GDPR/CCPA compliance for your region.', 'Confirm basic encryption for streams.', 'Check secure payment gateways in the base plan.', 'Review data storage policies.'] },
+                                { side: 'right', image: 'Accessibility', budgetTip: 'Choose platforms with free accessibility features.', title: '8. Ensure Accessibility for All', description: 'Inclusivity matters.', fact: 'The World Health Organization (2025) estimates that 16% of users need accessibility features.', link: '#', mainText: 'Confirm basic closed captioning and screen reader support.', checklist: ['Test free closed captioning for live sessions.', 'Verify screen reader compatibility.', 'Enable multilingual options if included.', 'Ensure mobile check-in is accessible.'] },
+                                { side: 'left', image: 'Brand+Consistency', budgetTip: 'Use platforms with free branding options.', title: '9. Customize for Brand Consistency', description: 'Your event should reflect your brand.', fact: 'A 2024 Forrester report notes that 57% of organizers prioritize branding for loyalty.', link: '#', mainText: 'Look for basic customization like logos and colors.', checklist: ['Upload logo and brand colors.', 'Customize registration pages with free templates.', 'Create tailored content for audiences.', 'Test branded visuals in the interface.'] },
+                                { side: 'right', image: 'Scalability', budgetTip: 'Choose platforms with affordable tiered pricing.', title: '10. Plan for Scalability', description: 'Think long-term.', fact: 'A 2024 Gartner report highlights scalability concerns.', link: '#', mainText: 'Ensure the platform supports growth without steep price jumps.', checklist: ['Confirm capacity for future growth.', 'Review affordable pricing tiers.', 'Test performance with simulated audiences.', 'Ask for case studies of similar events.'] },
+                                { side: 'left', image: 'On-Demand+Content', budgetTip: 'Opt for platforms with free recording features.', title: '11. Offer On-Demand Content', description: 'Time zones vary.', fact: 'A 2024 Nielsen study found that 47% of virtual attendees prefer on-demand access.', link: '#', mainText: 'Ensure basic recording and upload capabilities.', checklist: ['Test recording and upload process.', 'Set up on-demand access post-event.', 'Restrict premium content if included.', 'Verify playback on multiple devices.'] },
+                                { side: 'right', image: 'Reliable+Support', budgetTip: 'Avoid platforms requiring paid support upgrades.', title: '12. Demand Reliable Support', description: 'Tech glitches happen.', fact: 'A 2025 IDC report shows that 52% of organizers need 24/7 support.', link: '#', mainText: 'Look for basic support via email or chat.', checklist: ['Test support response via chat/email.', 'Confirm 24/7 availability in the base plan.', 'Request a free account manager if possible.', 'Save support contact details.'] },
+                                { side: 'left', image: 'Simple+Setup', budgetTip: 'Choose platforms with free dashboards to avoid training costs.', title: '13. Simplify Setup and Management', description: 'A complex platform wastes time. Look for an intuitive dashboard for registrations and schedules.', fact: '', link: '', mainText: '', checklist: ['Test dashboard for ease of use and look for AI-assisted content generation.', 'Set up a sample event.', 'Ensure non-technical staff can navigate.', 'Verify bulk upload options.'] },
+                                { side: 'right', image: 'Time+Zones', budgetTip: 'Use platforms with free time zone adjustments to save on custom coding.', title: '14. Support Time Zone Flexibility', description: 'Global audiences need time zone support.', fact: '', link: '', mainText: '', checklist: ['Enable time zone adjustments for schedules.', 'Test agenda display in multiple time zones.', 'Confirm email reminders adjust automatically.', 'Provide a free time zone converter tool.'] },
+                                { side: 'left', image: 'Multi-Event', budgetTip: 'Look for free multi-event management for small-scale events.', title: '15. Manage Multiple Events', description: 'For multiple events, choose a platform supporting unique branding.', fact: '', link: '', mainText: '', checklist: ['Set up two sample events with branding.', 'Verify independent settings for each.', 'Test cross-event analytics.', 'Confirm bulk management features.'] },
+                                { side: 'right', image: 'Cost+vs+Value', budgetTip: 'Focus on robust free tiers or low-cost plans.', title: '16. Balance Cost and Value', description: 'Don’t pick the cheapest option blindly.', fact: 'A 2024 Deloitte study suggests comparing features vs. pricing.', link: '#', mainText: '', checklist: ['Request a pricing breakdown.', 'Compare features across three platforms.', 'Check for hidden fees.', 'Schedule a demo to assess value.'] },
+                                { side: 'left', image: 'Reliability', budgetTip: 'Choose platforms with proven reliability in free or low-cost tiers.', title: '17. Ensure Reliability Under Load', description: 'Crashes kill events.', fact: 'A 2024 Akamai report emphasizes handling high traffic.', link: '#', mainText: '', checklist: ['Request uptime stats (aim for 99.9%+).', 'Ask for load-testing results.', 'Review case studies of similar events.', 'Test stability with simulated traffic.'] }
+                            ];
 
-                        <!-- Article Point 2 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=High-Quality+Streaming" alt="Illustration for High-Quality Streaming" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Look for pay-per-use streaming or free tiers for smaller audiences.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">2. Ensure High-Quality Streaming</h3>
-                                <p class="mb-5">Streaming issues can tank your event.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2023 Akamai report found that 60% of viewers abandon streams if buffering exceeds 8 seconds.</p>
-                                </div>
-                                <p class="mb-5">Choose platforms with high-definition video and adaptive bitrate streaming.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm HD video (1080p or higher) in the base plan.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test streaming on low-bandwidth connections.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ask about the load capacity for your audience size.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request uptime stats (aim for 99.9%+).</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- Article Point 3 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Tech+Integration" alt="Illustration for In-Person Tech Integration" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Use platforms that work with free or low-cost tools like barcode scanners instead of proprietary hardware.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">3. Integrate with In-Person Tech</h3>
-                                <p class="mb-5">Your platform must sync with on-site tools like projectors or RFID check-ins.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Gartner study notes that 70% of organizers struggle with tech integration.</p>
-                                </div>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> List your on-site tech (e.g., badge scanners, projectors).</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify compatibility with affordable AV equipment.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test real-time syncing of attendee data.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm free API support for integrations.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 4 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x600/E8E0FF/2D1273?text=Existing+Tools" alt="Illustration for Integrating with Existing Tools" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Use platforms that work with free tools like Google Sheets or PayPal.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">4. Integrate with Existing Tools</h3>
-                                <p class="mb-5">Sync with your workflow.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Forrester study notes that 68% of organizers face integration issues.</p>
-                                </div>
-                                <p class="mb-5">Check compatibility with free CRMs or payment systems.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> List your tools (CRM, email, payment).</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify free API support for integrations.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test data syncing with free tools.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm compatibility with low-cost badge printers.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 5 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Attendee+Interaction" alt="Illustration for Attendee Interaction and Community" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Prioritize free tools like chat or basic polls over premium features like gamification or advanced matchmaking.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">5. Enhance Attendee Interaction and Community</h3>
-                                <p class="mb-5">Engagement, networking, and community make events memorable.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2025 Harvard Business Review article found that 78% of attendees value interactive tools, while a 2024 McKinsey report notes that 72% prioritize networking and 65% value community features.</p>
-                                </div>
-                                <p class="mb-5">Look for platforms with polls, Q&A, chat, AI matchmaking, virtual lobbies, and discussion boards.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Enable free polls, Q&A, and chat for sessions.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up virtual lobbies or discussion boards for mingling.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Use basic AI matchmaking or attendee profiles if included.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Promote pre-event networking via free tools.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 6 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Robust+Analytics" alt="Illustration for Robust Analytics" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Choose platforms with basic analytics in the base plan.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">6. Demand Robust Analytics</h3>
-                                <p class="mb-5">Data proves your event’s success.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Deloitte study found that 63% of managers use analytics for ROI.</p>
-                                </div>
-                                <p class="mb-5">Look for free real-time dashboards tracking attendance and engagement.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm free real-time analytics for attendance.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check for exportable reports in CSV/PDF.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test dashboard usability during setup.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure metrics cover both audiences.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 7 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Security+%26+Privacy" alt="Illustration for Security and Privacy" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Opt for platforms with built-in security to avoid compliance costs.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">7. Prioritize Security and Privacy</h3>
-                                <p class="mb-5">Data breaches destroy trust.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Ponemon Institute report states that 58% of platforms faced cyber threats.</p>
-                                </div>
-                                <p class="mb-5">Ensure GDPR/CCPA compliance and basic encryption.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify GDPR/CCPA compliance for your region.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm basic encryption for streams.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check secure payment gateways in the base plan.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Review data storage policies.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 8 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Accessibility" alt="Illustration for Accessibility for All" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Choose platforms with free accessibility features.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">8. Ensure Accessibility for All</h3>
-                                <p class="mb-5">Inclusivity matters.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> The World Health Organization (2025) estimates that 16% of users need accessibility features.</p>
-                                </div>
-                                <p class="mb-5">Confirm basic closed captioning and screen reader support.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test free closed captioning for live sessions.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify screen reader compatibility.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Enable multilingual options if included.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure mobile check-in is accessible.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 9 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x600/E8E0FF/2D1273?text=Brand+Consistency" alt="Illustration for Brand Consistency" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Use platforms with free branding options.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">9. Customize for Brand Consistency</h3>
-                                <p class="mb-5">Your event should reflect your brand.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Forrester report notes that 57% of organizers prioritize branding for loyalty.</p>
-                                </div>
-                                <p class="mb-5">Look for basic customization like logos and colors.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Upload logo and brand colors.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Customize registration pages with free templates.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Create tailored content for audiences.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test branded visuals in the interface.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 10 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Scalability" alt="Illustration for Planning for Scalability" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Choose platforms with affordable tiered pricing.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">10. Plan for Scalability</h3>
-                                <p class="mb-5">Think long-term.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Gartner report highlights scalability concerns.</p>
-                                </div>
-                                <p class="mb-5">Ensure the platform supports growth without steep price jumps.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm capacity for future growth.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Review affordable pricing tiers.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test performance with simulated audiences.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ask for case studies of similar events.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 11 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=On-Demand+Content" alt="Illustration for On-Demand Content" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Opt for platforms with free recording features.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">11. Offer On-Demand Content</h3>
-                                <p class="mb-5">Time zones vary.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Nielsen study found that 47% of virtual attendees prefer on-demand access.</p>
-                                </div>
-                                <p class="mb-5">Ensure basic recording and upload capabilities.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test recording and upload process.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up on-demand access post-event.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Restrict premium content if included.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify playback on multiple devices.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 12 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Reliable+Support" alt="Illustration for Reliable Support" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Avoid platforms requiring paid support upgrades.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">12. Demand Reliable Support</h3>
-                                <p class="mb-5">Tech glitches happen.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2025 IDC report shows that 52% of organizers need 24/7 support.</p>
-                                </div>
-                                <p class="mb-5">Look for basic support via email or chat.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test support response via chat/email.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm 24/7 availability in the base plan.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request a free account manager if possible.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Save support contact details.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 13 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Simple+Setup" alt="Illustration for Simplified Setup and Management" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Choose platforms with free dashboards to avoid training costs.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">13. Simplify Setup and Management</h3>
-                                <p class="mb-5">A complex platform wastes time. Look for an intuitive dashboard for registrations and schedules.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test dashboard for ease of use and look for AI-assisted content generation.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up a sample event.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure non-technical staff can navigate.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify bulk upload options.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 14 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Time+Zones" alt="Illustration for Time Zone Flexibility" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Use platforms with free time zone adjustments to save on custom coding.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">14. Support Time Zone Flexibility</h3>
-                                <p class="mb-5">Global audiences need time zone support.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Enable time zone adjustments for schedules.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test agenda display in multiple time zones.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm email reminders adjust automatically.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Provide a free time zone converter tool.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 15 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Multi-Event" alt="Illustration for Managing Multiple Events" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Look for free multi-event management for small-scale events.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">15. Manage Multiple Events</h3>
-                                <p class="mb-5">For multiple events, choose a platform supporting unique branding.</p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up two sample events with branding.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify independent settings for each.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test cross-event analytics.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm bulk management features.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 16 -->
-                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Cost+vs+Value" alt="Illustration for Balancing Cost and Value" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Focus on robust free tiers or low-cost plans.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">16. Balance Cost and Value</h3>
-                                <p class="mb-5">Don’t pick the cheapest option blindly.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Deloitte study suggests comparing features vs. pricing.</p>
-                                </div>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request a pricing breakdown.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Compare features across three platforms.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check for hidden fees.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Schedule a demo to assess value.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Article Point 17 -->
-                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                            <div class="w-full md:w-1/2 flex flex-col gap-6">
-                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Reliability" alt="Illustration for Reliability Under Load" class="w-full object-cover rounded-lg shadow-md">
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                    Budget Tip: Choose platforms with proven reliability in free or low-cost tiers.
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2">
-                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">17. Ensure Reliability Under Load</h3>
-                                <p class="mb-5">Crashes kill events.</p>
-                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
-                                    <p><span class="font-bold">Fact:</span> A 2024 Akamai report emphasizes handling high traffic.</p>
-                                </div>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request uptime stats (aim for 99.9%+).</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ask for load-testing results.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Review case studies of similar events.</li>
-                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test stability with simulated traffic.</li>
-                                </ul>
-                            </div>
-                        </div>
+                            const articleContainer = document.querySelector('.space-y-12');
+                            articlePoints.forEach(point => {
+                                const direction = point.side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
+                                const checklistItems = point.checklist.map(item => `<li class="flex items-start"><span class="text-green-500 font-bold mr-2">✓</span> ${item}</li>`).join('');
+                                
+                                const pointHTML = `
+                                <div class="article-point flex flex-col ${direction} items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                                    <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                        <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=${point.image}" alt="Illustration for ${point.title}" class="w-full object-cover rounded-lg shadow-md">
+                                        <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                            Budget Tip: ${point.budgetTip}
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:w-1/2">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">${point.title}</h3>
+                                        <p class="mb-5">${point.description}</p>
+                                        ${point.fact ? `<a href="${point.link}" target="_blank" class="block bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors"><p><span class="font-bold">Fact:</span> ${point.fact}</p></a>` : ''}
+                                        ${point.mainText ? `<p class="mb-5">${point.mainText}</p>` : ''}
+                                        <ul class="space-y-2">${checklistItems}</ul>
+                                    </div>
+                                </div>`;
+                                articleContainer.innerHTML += pointHTML;
+                            });
+                        </script>
 
                         <div class="text-center pt-12">
                             <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Why Choose the Right Platform?</h3>
