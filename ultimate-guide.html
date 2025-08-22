@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Guide to Choosing the Perfect Event Platform - Eventira</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to your stylesheet -->
+    <link href="style.css" rel="stylesheet">
+    <script>
+        // This part MUST stay in the HTML for Tailwind CSS to work
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#5925DC', '50': '#F4F0FF', '100': '#E8E0FF', '200': '#D1C2FF', '300': '#B9A3FF', '400': '#A285FF', '500': '#8B66FF', '600': '#7447FF', '700': '#5925DC', '800': '#431CA8', '900': '#2D1273', '950': '#1A0B4A' },
+                    },
+                    animation: { 
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 
+                        'gradient-pan': 'gradientPan 6s ease infinite', 
+                        'shine': 'shine 5s ease-in-out infinite' 
+                    },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }, },
+                        gradientPan: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' }, },
+                        shine: { '0%': { transform: 'translateX(-100%)' }, '50%, 100%': { transform: 'translateX(100%)' }, }
+                    }
+                }
+            },
+            plugins: [],
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300 antialiased transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex-shrink-0"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <!-- Features Dropdown -->
+                    <div class="relative" id="features-dropdown-container">
+                        <button id="features-dropdown-button" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">
+                            <span>Features</span>
+                            <svg class="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <div id="features-dropdown-menu" class="absolute mt-2 w-64 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden dropdown-solid-bg">
+                            <div class="py-1">
+                                <a href="index.html#features-management" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Event Management & Operations</a>
+                                <a href="index.html#features-engagement" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Attendee Experience & Engagement</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="beta.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Join Beta</a>
+                    <a href="index.html#faq" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">FAQ</a>
+                    <a href="resources.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Resources</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"><svg id="theme-icon-light" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg><svg id="theme-icon-dark" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg></button>
+                    <a href="#" class="hidden sm:inline-block px-5 py-2.5 text-sm font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/50 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors duration-300">Login</a>
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html#features-management" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Management Features</a><a href="index.html#features-engagement" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Attendee Features</a><a href="beta.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="index.html#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><a href="resources.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Resources</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
+        <div class="h-0.5 w-full header-strip animate-gradient-pan"></div>
+    </header>
+
+    <main>
+        <div class="pt-32 pb-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <article class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary dark:text-primary-300 tracking-tight">The Ultimate Guide to Choosing the Perfect Event Platform for Your Hybrid Events on a Budget</h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A streamlined guide with 17 key considerations to help you select a platform that impresses without breaking the bank. Make sure you get a copy of your checklist at the end.</p>
+                    </div>
+                    
+                    <div class="space-y-12">
+                        <p class="text-lg leading-relaxed">Planning a hybrid event on a tight budget is like cooking a gourmet meal with pantry staples—you need creativity, strategy, and the right tools. As an event manager, selecting a cost-effective platform that caters to both in-person and virtual attendees is crucial. This streamlined guide provides 17 key considerations to help you select a platform that impresses without breaking the bank. Each point is backed by third-party research, budget-friendly tips, and an actionable checklist. Let’s make your next event a hit!</p>
+
+                        <!-- Article Point 1 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Seamless+Experience" alt="Illustration for Seamless User Experience" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Opt for platforms with free PWAs or mobile-optimized browsers to avoid costly app development.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">1. Prioritize a Seamless User Experience</h3>
+                                <p class="mb-5">A great platform feels intuitive for all attendees, whether in the venue or online.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Forrester Research study found that 66% of users abandon platforms with poor usability. <a href="https://www.forrester.com/press-newsroom/forrester-2024-us-customer-experience-index/" class="text-primary hover:underline" target="_blank"> (Read)</a></p>
+                                </div>
+                                <p class="mb-5">Look for a clean interface that works across devices. A progressive web app (PWA) is ideal—it offers app-like functionality without a download, works offline, and ensures fast, reliable mobile access.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test registration and streaming on mobile and desktop.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure a PWA or responsive browser version is in the base plan.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify navigation is intuitive with clear menus.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check for free guided tutorials or tooltips.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Tailor content for in-person and online attendees.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure options to engage attendees via push notifications.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 2 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=High-Quality+Streaming" alt="Illustration for High-Quality Streaming" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Look for pay-per-use streaming or free tiers for smaller audiences.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">2. Ensure High-Quality Streaming</h3>
+                                <p class="mb-5">Streaming issues can tank your event.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2023 Akamai report found that 60% of viewers abandon streams if buffering exceeds 8 seconds.</p>
+                                </div>
+                                <p class="mb-5">Choose platforms with high-definition video and adaptive bitrate streaming.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm HD video (1080p or higher) in the base plan.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test streaming on low-bandwidth connections.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ask about the load capacity for your audience size.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request uptime stats (aim for 99.9%+).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Article Point 3 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Tech+Integration" alt="Illustration for In-Person Tech Integration" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Use platforms that work with free or low-cost tools like barcode scanners instead of proprietary hardware.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">3. Integrate with In-Person Tech</h3>
+                                <p class="mb-5">Your platform must sync with on-site tools like projectors or RFID check-ins.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Gartner study notes that 70% of organizers struggle with tech integration.</p>
+                                </div>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> List your on-site tech (e.g., badge scanners, projectors).</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify compatibility with affordable AV equipment.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test real-time syncing of attendee data.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm free API support for integrations.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 4 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x600/E8E0FF/2D1273?text=Existing+Tools" alt="Illustration for Integrating with Existing Tools" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Use platforms that work with free tools like Google Sheets or PayPal.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">4. Integrate with Existing Tools</h3>
+                                <p class="mb-5">Sync with your workflow.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Forrester study notes that 68% of organizers face integration issues.</p>
+                                </div>
+                                <p class="mb-5">Check compatibility with free CRMs or payment systems.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> List your tools (CRM, email, payment).</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify free API support for integrations.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test data syncing with free tools.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm compatibility with low-cost badge printers.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 5 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Attendee+Interaction" alt="Illustration for Attendee Interaction and Community" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Prioritize free tools like chat or basic polls over premium features like gamification or advanced matchmaking.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">5. Enhance Attendee Interaction and Community</h3>
+                                <p class="mb-5">Engagement, networking, and community make events memorable.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2025 Harvard Business Review article found that 78% of attendees value interactive tools, while a 2024 McKinsey report notes that 72% prioritize networking and 65% value community features.</p>
+                                </div>
+                                <p class="mb-5">Look for platforms with polls, Q&A, chat, AI matchmaking, virtual lobbies, and discussion boards.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Enable free polls, Q&A, and chat for sessions.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up virtual lobbies or discussion boards for mingling.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Use basic AI matchmaking or attendee profiles if included.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Promote pre-event networking via free tools.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 6 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Robust+Analytics" alt="Illustration for Robust Analytics" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Choose platforms with basic analytics in the base plan.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">6. Demand Robust Analytics</h3>
+                                <p class="mb-5">Data proves your event’s success.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Deloitte study found that 63% of managers use analytics for ROI.</p>
+                                </div>
+                                <p class="mb-5">Look for free real-time dashboards tracking attendance and engagement.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm free real-time analytics for attendance.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check for exportable reports in CSV/PDF.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test dashboard usability during setup.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure metrics cover both audiences.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 7 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Security+%26+Privacy" alt="Illustration for Security and Privacy" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Opt for platforms with built-in security to avoid compliance costs.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">7. Prioritize Security and Privacy</h3>
+                                <p class="mb-5">Data breaches destroy trust.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Ponemon Institute report states that 58% of platforms faced cyber threats.</p>
+                                </div>
+                                <p class="mb-5">Ensure GDPR/CCPA compliance and basic encryption.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify GDPR/CCPA compliance for your region.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm basic encryption for streams.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check secure payment gateways in the base plan.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Review data storage policies.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 8 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Accessibility" alt="Illustration for Accessibility for All" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Choose platforms with free accessibility features.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">8. Ensure Accessibility for All</h3>
+                                <p class="mb-5">Inclusivity matters.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> The World Health Organization (2025) estimates that 16% of users need accessibility features.</p>
+                                </div>
+                                <p class="mb-5">Confirm basic closed captioning and screen reader support.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test free closed captioning for live sessions.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify screen reader compatibility.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Enable multilingual options if included.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure mobile check-in is accessible.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 9 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x600/E8E0FF/2D1273?text=Brand+Consistency" alt="Illustration for Brand Consistency" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Use platforms with free branding options.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">9. Customize for Brand Consistency</h3>
+                                <p class="mb-5">Your event should reflect your brand.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Forrester report notes that 57% of organizers prioritize branding for loyalty.</p>
+                                </div>
+                                <p class="mb-5">Look for basic customization like logos and colors.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Upload logo and brand colors.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Customize registration pages with free templates.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Create tailored content for audiences.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test branded visuals in the interface.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 10 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Scalability" alt="Illustration for Planning for Scalability" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Choose platforms with affordable tiered pricing.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">10. Plan for Scalability</h3>
+                                <p class="mb-5">Think long-term.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Gartner report highlights scalability concerns.</p>
+                                </div>
+                                <p class="mb-5">Ensure the platform supports growth without steep price jumps.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm capacity for future growth.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Review affordable pricing tiers.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test performance with simulated audiences.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ask for case studies of similar events.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 11 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=On-Demand+Content" alt="Illustration for On-Demand Content" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Opt for platforms with free recording features.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">11. Offer On-Demand Content</h3>
+                                <p class="mb-5">Time zones vary.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Nielsen study found that 47% of virtual attendees prefer on-demand access.</p>
+                                </div>
+                                <p class="mb-5">Ensure basic recording and upload capabilities.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test recording and upload process.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up on-demand access post-event.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Restrict premium content if included.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify playback on multiple devices.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 12 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=Reliable+Support" alt="Illustration for Reliable Support" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Avoid platforms requiring paid support upgrades.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">12. Demand Reliable Support</h3>
+                                <p class="mb-5">Tech glitches happen.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2025 IDC report shows that 52% of organizers need 24/7 support.</p>
+                                </div>
+                                <p class="mb-5">Look for basic support via email or chat.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test support response via chat/email.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm 24/7 availability in the base plan.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request a free account manager if possible.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Save support contact details.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 13 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Simple+Setup" alt="Illustration for Simplified Setup and Management" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Choose platforms with free dashboards to avoid training costs.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">13. Simplify Setup and Management</h3>
+                                <p class="mb-5">A complex platform wastes time. Look for an intuitive dashboard for registrations and schedules.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test dashboard for ease of use and look for AI-assisted content generation.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up a sample event.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ensure non-technical staff can navigate.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify bulk upload options.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 14 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Time+Zones" alt="Illustration for Time Zone Flexibility" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Use platforms with free time zone adjustments to save on custom coding.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">14. Support Time Zone Flexibility</h3>
+                                <p class="mb-5">Global audiences need time zone support.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Enable time zone adjustments for schedules.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test agenda display in multiple time zones.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm email reminders adjust automatically.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Provide a free time zone converter tool.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 15 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Multi-Event" alt="Illustration for Managing Multiple Events" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Look for free multi-event management for small-scale events.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">15. Manage Multiple Events</h3>
+                                <p class="mb-5">For multiple events, choose a platform supporting unique branding.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Set up two sample events with branding.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Verify independent settings for each.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test cross-event analytics.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Confirm bulk management features.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 16 -->
+                        <div class="article-point flex flex-col md:flex-row-reverse items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Cost+vs+Value" alt="Illustration for Balancing Cost and Value" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Focus on robust free tiers or low-cost plans.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">16. Balance Cost and Value</h3>
+                                <p class="mb-5">Don’t pick the cheapest option blindly.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Deloitte study suggests comparing features vs. pricing.</p>
+                                </div>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request a pricing breakdown.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Compare features across three platforms.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Check for hidden fees.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Schedule a demo to assess value.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Article Point 17 -->
+                        <div class="article-point flex flex-col md:flex-row items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                            <div class="w-full md:w-1/2 flex flex-col gap-6">
+                                <img src="https://placehold.co/800x500/E8E0FF/2D1273?text=Reliability" alt="Illustration for Reliability Under Load" class="w-full object-cover rounded-lg shadow-md">
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                    Budget Tip: Choose platforms with proven reliability in free or low-cost tiers.
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold text-primary dark:text-primary-300 mb-3">17. Ensure Reliability Under Load</h3>
+                                <p class="mb-5">Crashes kill events.</p>
+                                <div class="bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg mb-5 text-sm">
+                                    <p><span class="font-bold">Fact:</span> A 2024 Akamai report emphasizes handling high traffic.</p>
+                                </div>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Request uptime stats (aim for 99.9%+).</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Ask for load-testing results.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Review case studies of similar events.</li>
+                                    <li class="flex items-start"><span class="text-primary font-bold mr-2">✓</span> Test stability with simulated traffic.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-12">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Why Choose the Right Platform?</h3>
+                            <p class="mt-4 text-lg max-w-2xl mx-auto">A budget-friendly platform blends essential tech, engagement, and analytics to make your hybrid event shine. Test thoroughly, prioritize free or low-cost features, and use these checklists to stay on track.</p>
+                            <p class="mt-4 text-lg max-w-2xl mx-auto">Ready to find a platform that fits your budget? Consider Eventira.</p>
+                            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="beta.html" class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105">Join the Beta</a>
+                                <a href="#" class="inline-block bg-white dark:bg-gray-800 text-primary border border-primary px-8 py-4 rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105">Download the Checklist</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-950/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-4"><a href="#" class="flex items-center space-x-2"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a><p class="mt-4 text-gray-600 dark:text-gray-400">The all-in-one platform to make your events unforgettable.</p><div class="mt-6 flex space-x-4"><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">LinkedIn</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">Facebook</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg></a></div></div>
+                <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Product</h3><ul class="mt-4 space-y-4"><li><a href="index.html#features" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Features</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Pricing</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Integrations</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Company</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">About</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Careers</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Contact</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Resources</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Articles</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Help Center</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">API Docs</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Legal</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Terms</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Privacy</a></li></ul></div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8 text-center"><p class="text-base text-gray-500 dark:text-gray-400">&copy; 2025 Eventira, Inc. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
