@@ -9,10 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Link to your stylesheet -->
     <link href="style.css" rel="stylesheet">
     <script>
-        // This part MUST stay in the HTML for Tailwind CSS to work
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -20,11 +18,7 @@
                     colors: {
                         primary: { DEFAULT: '#5925DC', '50': '#F4F0FF', '100': '#E8E0FF', '200': '#D1C2FF', '300': '#B9A3FF', '400': '#A285FF', '500': '#8B66FF', '600': '#7447FF', '700': '#5925DC', '800': '#431CA8', '900': '#2D1273', '950': '#1A0B4A' },
                     },
-                    animation: { 
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 
-                        'gradient-pan': 'gradientPan 6s ease infinite', 
-                        'shine': 'shine 5s ease-in-out infinite' 
-                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'gradient-pan': 'gradientPan 6s ease infinite', 'shine': 'shine 5s ease-in-out infinite' },
                     keyframes: {
                         fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }, },
                         gradientPan: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' }, },
@@ -44,7 +38,6 @@
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex-shrink-0"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a>
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <!-- Features Dropdown -->
                     <div class="relative" id="features-dropdown-container">
                         <button id="features-dropdown-button" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">
                             <span>Features</span>
@@ -77,8 +70,9 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <article class="max-w-6xl mx-auto">
                     <div class="text-center mb-12">
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">The Psychology of a Great Event: How to Craft a Can't-Miss Experience</h1>
-                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Behind every successful event is a deeper understanding of human behavior. It's not just about booking the best speakers or securing the flashiest venue; it's about designing an experience that feels effortless, builds a sense of community, and creates lasting, positive memories. The most impactful events leverage subtle psychological principles to guide attendees toward a more engaging and fulfilling experience.</p>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">The Psychology of a Great Event</h1>
+                        <h2 class="mt-2 text-2xl font-semibold text-gray-600 dark:text-gray-400">Part 2: Driving Engagement and Social Interaction</h2>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">How to Craft a Can't-Miss Experience. Behind every successful event is a deeper understanding of human behavior. It's not just about booking the best speakers or securing the flashiest venue; it's about designing an experience that feels effortless, builds a sense of community, and creates lasting, positive memories. The most impactful events leverage subtle psychological principles to guide attendees toward a more engaging and fulfilling experience.</p>
                     </div>
                     
                     <div class="space-y-12" id="article-content">
@@ -114,7 +108,6 @@
         // This script will dynamically generate the article points
         document.addEventListener('DOMContentLoaded', () => {
             const articleContent = [
-                { type: 'partTitle', text: 'Part 2: Driving Engagement and Social Interaction' },
                 { type: 'point', side: 'left', image: 'Social+Feed', example: '<strong>Event Platform Use Case:</strong> The event platform\'s main page has a live feed showing real-time posts and photos from attendees using the event hashtag.', title: '9. The "Spotlight Effect"', description: 'An integrated social feed displaying real-time posts and photos from attendees amplifies the buzz and encourages participation, making you feel part of the live conversation.' },
                 { type: 'point', side: 'right', image: 'Networking+Zones', example: '<strong>Example:</strong> Designated areas are physically and visually distinct, complete with comfortable seating and conversation starters, to lower the barrier to social interaction.', title: '10. "Connect Here" Zones', description: 'Designate specific, visually appealing areas as "networking zones," complete with comfortable seating and conversation starters, to lower the barrier to social interaction.' },
                 { type: 'point', side: 'left', image: 'Personalized+Agenda', example: '<strong>Event Platform Use Case:</strong> After a user creates their profile, the platform\'s home screen shows a carousel titled "Recommended for you" with a list of sessions and people based on their interests.', title: '11. Personalized Recommendations', description: 'After setting up your profile, imagine receiving tailored recommendations for sessions and networking opportunities, making the event feel uniquely crafted for your interests.' },
@@ -126,27 +119,22 @@
 
             const articleContainer = document.getElementById('article-content');
             articleContent.forEach(item => {
-                if (item.type === 'partTitle') {
-                    const partHTML = `<div class="text-center pt-8"><h2 class="text-2xl font-bold text-gray-900 dark:text-white">${item.text}</h2></div>`;
-                    articleContainer.innerHTML += partHTML;
-                } else if (item.type === 'point') {
-                    const direction = item.side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
-                    
-                    const pointHTML = `
-                    <div class="article-point flex flex-col ${direction} items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
-                        <div class="w-full md:w-1/2">
-                            <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=${item.image}" alt="Illustration for ${item.title}" class="w-full object-cover rounded-lg shadow-md h-72">
+                const direction = item.side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
+                
+                const pointHTML = `
+                <div class="article-point flex flex-col ${direction} items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=${item.image}" alt="Illustration for ${item.title}" class="w-full object-cover rounded-lg shadow-md h-72">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">${item.title}</h3>
+                        <p>${item.description}</p>
+                        <div class="mt-4 bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                            ${item.example}
                         </div>
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">${item.title}</h3>
-                            <p>${item.description}</p>
-                            <div class="mt-4 bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
-                                ${item.example}
-                            </div>
-                        </div>
-                    </div>`;
-                    articleContainer.innerHTML += pointHTML;
-                }
+                    </div>
+                </div>`;
+                articleContainer.innerHTML += pointHTML;
             });
         });
     </script>
