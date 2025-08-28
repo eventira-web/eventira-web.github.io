@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Psychology of a Great Event (Part 1) - Eventira</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#5925DC', '50': '#F4F0FF', '100': '#E8E0FF', '200': '#D1C2FF', '300': '#B9A3FF', '400': '#A285FF', '500': '#8B66FF', '600': '#7447FF', '700': '#5925DC', '800': '#431CA8', '900': '#2D1273', '950': '#1A0B4A' },
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'gradient-pan': 'gradientPan 6s ease infinite', 'shine': 'shine 5s ease-in-out infinite' },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' }, },
+                        gradientPan: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' }, },
+                        shine: { '0%': { transform: 'translateX(-100%)' }, '50%, 100%': { transform: 'translateX(100%)' }, }
+                    }
+                }
+            },
+            plugins: [],
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300 antialiased transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex-shrink-0"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <div class="relative" id="features-dropdown-container">
+                        <button id="features-dropdown-button" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">
+                            <span>Features</span>
+                            <svg class="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <div id="features-dropdown-menu" class="absolute mt-2 w-64 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden dropdown-solid-bg">
+                            <div class="py-1">
+                                <a href="index.html#features-management" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Event Management & Operations</a>
+                                <a href="index.html#features-engagement" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Attendee Experience & Engagement</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="beta.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Join Beta</a>
+                    <a href="index.html#faq" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">FAQ</a>
+                    <a href="resources.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Resources</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"><svg id="theme-icon-light" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg><svg id="theme-icon-dark" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg></button>
+                    <a href="#" class="hidden sm:inline-block px-5 py-2.5 text-sm font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/50 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors duration-300">Login</a>
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="index.html#features-management" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Management Features</a><a href="index.html#features-engagement" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Attendee Features</a><a href="beta.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Join Beta</a><a href="index.html#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a><a href="resources.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Resources</a><div class="border-t border-gray-200 dark:border-gray-700 my-2"></div><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800">Login</a></div></div>
+        <div class="h-0.5 w-full header-strip animate-gradient-pan"></div>
+    </header>
+
+    <main>
+        <div class="pt-32 pb-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <article class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">The Psychology of a Great Event</h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">How to Craft a Can't-Miss Experience. Behind every successful event is a deeper understanding of human behavior. It's not just about booking the best speakers or securing the flashiest venue; it's about designing an experience that feels effortless, builds a sense of community, and creates lasting, positive memories. The most impactful events leverage subtle psychological principles to guide attendees toward a more engaging and fulfilling experience.</p>
+                    </div>
+                    
+                    <div class="space-y-12" id="article-content">
+                        <!-- Article content will be injected here -->
+                    </div>
+
+                    <div class="flex justify-end pt-12">
+                        <a href="psychology_Engagement_pt2.html" class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105">Next Part &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-950/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-4"><a href="#" class="flex items-center space-x-2"><img src="images/logo.svg" alt="Eventira Logo" class="h-10 w-auto"></a><p class="mt-4 text-gray-600 dark:text-gray-400">The all-in-one platform to make your events unforgettable.</p><div class="mt-6 flex space-x-4"><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">LinkedIn</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a><a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primary-400 transition-colors"><span class="sr-only">Facebook</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg></a></div></div>
+                <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Product</h3><ul class="mt-4 space-y-4"><li><a href="index.html#features" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Features</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Pricing</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Integrations</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Company</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">About</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Careers</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Contact</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Resources</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Articles</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Help Center</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">API Docs</a></li></ul></div>
+                    <div><h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Legal</h3><ul class="mt-4 space-y-4"><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Terms</a></li><li><a href="#" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400">Privacy</a></li></ul></div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8 text-center"><p class="text-base text-gray-500 dark:text-gray-400">&copy; 2025 Eventira, Inc. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // This script will dynamically generate the article points
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleContent = [
+                { type: 'partTitle', text: 'Part 1: Influencing Attendee Behavior Through Nudging and Choice Architecture' },
+                { type: 'point', side: 'left', image: 'Digital+Registration', example: '<strong>Example:</strong> The registration confirmation page has a checkbox that says "Enroll in event networking platform" which is pre-selected for all users.', title: '1. Default Opt-in', description: 'Automatically enroll attendees in the event\'s official networking platform and inform them they can opt out.' },
+                { type: 'point', side: 'right', image: 'Progress+Bar', example: '<strong>Event Platform Use Case:</strong> The platform\'s profile setup features a progress bar at the top that shows "Profile Completion: 60%," encouraging attendees to finish filling out their information.', title: '2. Visible Progress', description: 'For multi-step processes, a clear progress indicator, perhaps on your personal digital dashboard, can motivate completion, leveraging the <strong>Goal Gradient Effect</strong>.' },
+                { type: 'point', side: 'left', image: 'Decoy+Pricing', example: '<strong>Example:</strong> An "all-access" pass costs $800, a "standard" pass costs $500, and a "premium" pass with fewer benefits than the all-access is offered for $790 to make the $800 pass seem like a great value.', title: '3. Decoy Pricing', description: 'Offer a "Premium" ticket at a slightly worse value than your "VIP" ticket to make the VIP option seem like a much better deal.' },
+                { type: 'point', side: 'right', image: 'Healthy+Defaults', example: '<strong>Example:</strong> At the coffee station, fruit-infused water is placed directly in front of the coffee pots, so it\'s the first thing attendees see.', title: '4. Healthy Defaults', description: 'At buffets, place water and healthier snacks at the beginning of the line, making them the default choice.' },
+                { type: 'point', side: 'left', image: 'Trending+Sessions', example: '<strong>Event Platform Use Case:</strong> The platform\'s session list features a "Trending" or "Most Bookmarked" badge on the top sessions, guiding attendees to the most popular choices.', title: '5. "Best-Seller" Highlights', description: 'A dynamic agenda that highlights "Trending" or "Most Bookmarked" sessions can effortlessly guide you to the most popular content, ensuring you don\'t miss out, leveraging <strong>Social Proof</strong>.' },
+                { type: 'point', side: 'right', image: 'Framing+Content', example: '<strong>Example:</strong> A session is titled, "3 Proven Strategies to Boost Sales," instead of "A Discussion on Sales Strategies."', title: '6. Framing Session Descriptions', description: 'Frame session titles to focus on the <strong>gain</strong> (e.g., "3 Proven Strategies to Boost Sales") rather than just the topic (e.g., "A Discussion on Sales Strategies").' },
+                { type: 'point', side: 'left', image: 'Giveaways', example: '<strong>Example (Zero-Price Effect):</strong> The event offers a free professional headshot service in one of the booths, creating a powerful incentive for attendees to visit that area.<br><strong>Example (Reciprocity):</strong> A surprise gift bag containing local artisan products is given to attendees in a specific workshop, making it feel more personal and valuable.', title: '7. Give-aways: Value Without Cost', description: 'This principle leverages the powerful psychological effect of receiving something for free. By offering genuine value without a direct cost, you can influence attendee behavior through a sense of goodwill and obligation.' },
+                { type: 'point', side: 'right', image: 'FOMO+Content', example: '<strong>Event Platform Use Case (Loss Aversion in Networking):</strong> Your digital event companion sends a notification: "You have 5 mutual connections you haven\'t met. Don\'t miss this opportunity!"<br><strong>Event Platform Use Case (Loss Aversion for Content):</strong> A push notification for a live session reads, "The keynote speaker\'s slides will be available exclusively to those who attend this live session via the platform."', title: '8. Loss Aversion and Scarcity', description: 'These concepts tap into the fear of missing out (FOMO) and our natural tendency to act to avoid a loss. By creating a sense of urgency and scarcity, you can motivate attendees to engage more actively.' },
+            ];
+
+            const articleContainer = document.getElementById('article-content');
+            articleContent.forEach(item => {
+                if (item.type === 'partTitle') {
+                    const partHTML = `<div class="text-center pt-8"><h2 class="text-2xl font-bold text-gray-900 dark:text-white">${item.text}</h2></div>`;
+                    articleContainer.innerHTML += partHTML;
+                } else if (item.type === 'point') {
+                    const direction = item.side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
+                    
+                    const pointHTML = `
+                    <div class="article-point flex flex-col ${direction} items-start gap-8 md:gap-12 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-lg">
+                        <div class="w-full md:w-1/2">
+                            <img src="https://placehold.co/800x400/E8E0FF/2D1273?text=${item.image}" alt="Illustration for ${item.title}" class="w-full object-cover rounded-lg shadow-md h-72">
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">${item.title}</h3>
+                            <p>${item.description}</p>
+                            <div class="mt-4 bg-primary-50 dark:bg-primary-900/50 p-4 rounded-lg text-primary-800 dark:text-primary-200 font-semibold">
+                                ${item.example}
+                            </div>
+                        </div>
+                    </div>`;
+                    articleContainer.innerHTML += pointHTML;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
